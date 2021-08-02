@@ -1,4 +1,4 @@
-# rust_context_free_grammar
+# Rust - Context Free Grammar
 uma lib de gramatica sem contexto em rust
 
 abaixo exemplo de uso que pode ser encontrado em src/main.rs
