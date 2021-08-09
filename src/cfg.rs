@@ -18,6 +18,21 @@ fn is_terminal(rules: &[Rule], name: &str) -> Option<String> {
 }
 
 /// Fuction check with theres a branch char or '|'
+/// returning part of the rule that matches lookahead
+pub fn find_token(tokens: String, lookahead: String) -> Option<String> {
+    for sentence in tokens.split('|') {
+        for word in sentence.split(" ") {
+            if word == lookahead
+            {
+                return Some(String::from(sentence));
+            }
+        }    
+    }
+
+    return None;
+}
+
+/// Fuction check with theres a branch char or '|'
 /// returning one of the elements in tokens using the classic rng
 fn choose_token(tokens: String) -> String {
     let mut secret_number = rand::thread_rng();
